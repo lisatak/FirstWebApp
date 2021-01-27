@@ -1,16 +1,16 @@
-﻿$("gradeCalc").click(function () {
+﻿$("#gradeCalc").click(function () {
     //create variables
-    const aWeight = 50
-    const gWeight = 10
-    const qWeight = 10
-    const eWeight = 20
-    const iWeight = 10
+    const aWeight = 50;
+    const gWeight = 10;
+    const qWeight = 10;
+    const eWeight = 20;
+    const iWeight = 10;
 
-    let assignment = $("assignment").val;
-    let group = $("#group").val;
-    let quiz = $("#quiz").val;
-    let exam = $("#exam").val;
-    let intex = $("#intex").val;
+    let assignment = parseInt($("assignment").val());
+    let group = parseInt($("#group").val());
+    let quiz = parseInt($("#quiz").val());
+    let exam = parseInt($("#exam").val());
+    let intex = parseInt($("#intex").val());
 
     //caluculate weighted average
     let finalGrade = ((assignment * aWeight + group * gWeight + quiz * qWeight + exam * eWeight + intex * iWeight) / 100).toFixed(2);
@@ -56,6 +56,7 @@
     }
 
     //display on page
-    $("finalGrade").innerHTML = letterGrade + " " + finalGrade;
+    
+    $("#finalGrade").text(letterGrade + " " + finalGrade);
 
 });
