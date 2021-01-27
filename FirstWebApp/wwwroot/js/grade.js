@@ -1,6 +1,4 @@
-﻿var calcButton = document.getElementById("gradeCalc");
-
-calcButton.addEventListener("click", function () {
+﻿$("gradeCalc").click(function () {
     //create variables
     const aWeight = 50
     const gWeight = 10
@@ -8,11 +6,11 @@ calcButton.addEventListener("click", function () {
     const eWeight = 20
     const iWeight = 10
 
-    let assignment = document.getElementById("assignment").value;
-    let group = document.getElementById("group").value;
-    let quiz = document.getElementById("quiz").value;
-    let exam = document.getElementById("exam").value;
-    let intex = document.getElementById("intex").value;
+    let assignment = $("assignment").val;
+    let group = $("#group").val;
+    let quiz = $("#quiz").val;
+    let exam = $("#exam").val;
+    let intex = $("#intex").val;
 
     //caluculate weighted average
     let finalGrade = ((assignment * aWeight + group * gWeight + quiz * qWeight + exam * eWeight + intex * iWeight) / 100).toFixed(2);
@@ -58,6 +56,6 @@ calcButton.addEventListener("click", function () {
     }
 
     //display on page
-    document.getElementById("finalGrade").innerHTML = letterGrade + " " + finalGrade;
+    $("finalGrade").innerHTML = letterGrade + " " + finalGrade;
 
-})
+});
